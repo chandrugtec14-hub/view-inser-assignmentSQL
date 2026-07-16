@@ -1,0 +1,16 @@
+use emp;
+create table empdetails(
+empid int unique,
+empname varchar(20),
+empdept varchar(20),
+empsal int
+);
+insert into empdetails values(101,'Chandru','HR',30000),(102,'Elango','Manager',35000),(103,'Ajay','Sales',25000),(104,'Naveen','Finance',40000);
+select * from empdetails;
+ create view emp_view as select empid,empname,empdept from empdetails;
+ select * from emp_view;
+ insert into emp_view values(101,'Rahul','IT');
+ 
+ insert into emp_view values(105,'Rocky','IT');
+ select * from emp_view;
+ update emp_view set empdept='Marketing' where empid = 105;
